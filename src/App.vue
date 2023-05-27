@@ -1,11 +1,11 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import Navigation from './components/Navigation.vue'
+import NavigationBar from './components/NavigationBar.vue'
 </script>
 
 <template>
-  <div class="flex flex-col min-h-screen font-Roboto">
-    <Navigation />
+  <div class="flex flex-col min-h-screen font-Roboto bg-black">
+    <NavigationBar />
     <RouterView />
   </div>
 </template>

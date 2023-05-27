@@ -8,7 +8,6 @@ module.exports = {
       },
       container: {
         padding: '8rem',
-        center: true,
       },
     },
     fontFamily: {
