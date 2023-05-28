@@ -8,11 +8,16 @@
     </Suspense>
     <Suspense>
       <MoviesSection sectionTitle="Trending This Week" />
-      <template #fallback> Loading... </template>
+
+      <template #fallback>
+        <MoviesSectionSkeleton />
+      </template>
     </Suspense>
     <Suspense>
-      <MoviesSection sectionTitle="Trending TV Shows" />
-      <template #fallback> Loading... </template>
+      <MoviesSection sectionTitle="Popular TV Series" />
+      <template #fallback>
+        <MoviesSectionSkeleton />
+      </template>
     </Suspense>
   </main>
 </template>
@@ -21,4 +26,5 @@
 import FeaturedMovie from '../components/FeaturedMovie.vue'
 import MoviesSection from '../components/MoviesSection.vue'
 import FeaturedMovieSkeleton from '../skeletons/FeaturedMovieSkeleton.vue'
+import MoviesSectionSkeleton from '../skeletons/MoviesSectionSkeleton.vue'
 </script>

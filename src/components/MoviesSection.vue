@@ -34,6 +34,8 @@ const getResults = async () => {
     `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`
   )
 
+  await new Promise((resolve) => setTimeout(resolve, 2000))
+
   return result.data.results.slice(8, 14)
 }
 
