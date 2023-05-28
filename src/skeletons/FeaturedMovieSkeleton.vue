@@ -11,9 +11,9 @@
         <UnitSkeleton class="rounded-lg max-w-[20%] text-lg" />
         <UnitSkeleton class="rounded-lg max-w-[50%] mb-4 text-lg" />
         <div class="flex max-w-full gap-2">
-          <UnitSkeleton class="rounded-lg w-[5%] text-sm" />
-          <UnitSkeleton class="rounded-lg w-[5%] text-sm" />
-          <UnitSkeleton class="rounded-lg w-[5%] text-sm" />
+          <UnitSkeleton class="rounded-lg w-[8%] text-sm py-2" />
+          <UnitSkeleton class="rounded-lg w-[6%] text-sm py-2" />
+          <UnitSkeleton class="rounded-lg w-[12%] text-sm py-2" />
         </div>
       </div>
       <div

@@ -29,7 +29,7 @@
           <div
             v-for="genre in movie.genres"
             :key="genre.id"
-            class="bg-black bg-opacity-40 px-4 py-1 rounded-lg text-sm"
+            class="bg-black bg-opacity-40 px-4 py-2 rounded-lg"
           >
             <span class="opacity-100">{{ genre.name }}</span>
           </div>
@@ -56,7 +56,6 @@
         </div>
         <div
           class="w-24 h-16 bg-green-900 rounded-xl flex items-center justify-center"
-          @click="testEvent()"
         >
           <i class="fas fa-play text-3xl"></i>
         </div>
@@ -82,15 +81,10 @@ const getResults = async () => {
     `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`
   )
 
-  const movie = await getDetails(result.data.results[1])
+  const movie = await getDetails(result.data.results[0])
   await new Promise((resolve) => setTimeout(resolve, 2000))
   return movie
 }
 
-const testEvent = () => {
-  alert('Hello World')
-}
-
 const movie = await getResults()
-console.log(movie)
 </script>

@@ -1,6 +1,6 @@
 <template>
-  <div class="stick top-0 text-white">
-    <nav class="container flex flex-col sm:flex-row items-center gap-4 py-6">
+  <div class="sticky top-0 text-white z-30 bg-black">
+    <nav class="container flex flex-row items-center gap-4 py-6">
       <RouterLink :to="{ name: home }">
         <div class="flex items-center gap-3">
           <i class="fa-solid fa-film text-3xl"></i>
