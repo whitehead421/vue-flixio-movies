@@ -1,6 +1,6 @@
 <template>
-  <div class="sticky top-0 text-white z-30 bg-black">
-    <nav class="container flex flex-row items-center gap-4 py-6">
+  <header class="sticky top-0 text-white z-30 bg-black">
+    <nav class="container flex flex-col sm:flex-row items-center gap-4 py-6">
       <RouterLink :to="{ name: home }">
         <div class="flex items-center gap-3">
           <i class="fa-solid fa-film text-3xl"></i>
@@ -14,14 +14,14 @@
         <RouterLink to="/tv-shows">KIDS</RouterLink>
         <RouterLink to="/profile">
           <img
-            class="w-10 h-10 rounded-full"
+            class="w-10 h-10 rounded-full hidden sm:block"
             src="https://i.pravatar.cc/100"
             alt="avatar"
           />
         </RouterLink>
       </div>
     </nav>
-  </div>
+  </header>
 </template>
 
 <script setup>

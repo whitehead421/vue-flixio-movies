@@ -4,10 +4,20 @@ module.exports = {
   theme: {
     extend: {},
     container: {
-      padding: '4rem',
+      DEFAULT: '1rem',
+      sm: '2rem',
+      lg: '4rem',
+      xl: '5rem',
+      '2xl': '6rem',
+      center: true,
     },
     fontFamily: {
       sans: ['Open Sans', 'sans-serif'],
+    },
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
     },
   },
   plugins: [],
