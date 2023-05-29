@@ -1,5 +1,5 @@
 <template>
-  <div class="relative container text-white">
+  <div class="relative container text-white" @click="goToMovieView(movie)">
     <div class="group relative cursor-pointer overflow-hidden rounded-xl">
       <!-- Image Div -->
       <div class="h-96 w-full">
@@ -36,6 +36,7 @@
         </div>
       </div>
       <!-- Details Div -->
+      <!-- TODO: Make squares blurred in the background. -->
       <div
         class="absolute h-full top-0 right-0 mx-4 flex flex-col justify-around z-10 font-bold"
       >
@@ -65,6 +66,7 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
 import axios from 'axios'
 
 const apiKey = import.meta.env.VITE_TMDB_API_KEY
@@ -87,4 +89,15 @@ const getResults = async () => {
 }
 
 const movie = await getResults()
+
+const router = useRouter()
+
+const goToMovieView = (movie) => {
+  router.push({
+    name: 'movieView',
+    params: {
+      id: movie.id,
+    },
+  })
+}
 </script>

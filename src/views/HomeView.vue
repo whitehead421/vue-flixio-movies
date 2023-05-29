@@ -1,5 +1,6 @@
 <template>
   <main>
+    <NavigationBar />
     <Suspense>
       <FeaturedMovie />
       <template #fallback>
@@ -23,6 +24,7 @@
 </template>
 
 <script setup>
+import NavigationBar from '../components/NavigationBar.vue'
 import FeaturedMovie from '../components/FeaturedMovie.vue'
 import MoviesSection from '../components/MoviesSection.vue'
 import FeaturedMovieSkeleton from '../skeletons/FeaturedMovieSkeleton.vue'
