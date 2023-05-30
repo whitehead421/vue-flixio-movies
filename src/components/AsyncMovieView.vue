@@ -1,5 +1,4 @@
 <template>
-  <NavigationBar class="bg-transparent" />
   <div class="text-white">
     <div class="relative flex justify-center">
       <img
@@ -61,7 +60,6 @@
 <script setup>
 import axios from 'axios'
 import { useRoute } from 'vue-router'
-import NavigationBar from './NavigationBar.vue'
 
 const route = useRoute()
 const apiKey = import.meta.env.VITE_TMDB_API_KEY

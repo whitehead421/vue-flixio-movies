@@ -1,6 +1,6 @@
 <template>
-  <div class="relative container text-white" @click="goToMovieView(movie)">
-    <div class="group relative cursor-pointer overflow-hidden rounded-xl">
+  <div class="container relative text-white" @click="goToMovieView(movie)">
+    <div class="group relative cursor-pointer overflow-hidden">
       <!-- Image Div -->
       <div class="h-96 w-full">
         <img
@@ -14,50 +14,43 @@
       ></div>
       <!-- Title and Description Div -->
       <div
-        class="absolute inset-0 flex gap-2 flex-col px-9 transition-all duration-500 justify-end mb-4"
+        class="absolute inset-0 mb-4 flex flex-col justify-end gap-2 px-9 transition-all duration-500"
       >
-        <h1 class="uppercase font-dmserif text-6xl font-bold text-white mb-4">
+        <h1 class="font-dmserif text-2xl font-bold uppercase">
           {{ movie.title }}
         </h1>
         <p
-          class="mb-4 text-lg text-white transition-opacity duration-300 line-clamp-2 w-1/2"
+          class="mb-2 line-clamp-3 w-1/2 text-sm transition-opacity duration-300"
         >
           {{ movie.overview }}
         </p>
         <!-- Tags Div -->
-        <div class="flex gap-2">
+        <div class="mb-2 flex gap-2">
           <div
             v-for="genre in movie.genres"
             :key="genre.id"
-            class="bg-black bg-opacity-40 px-4 py-2 rounded-lg"
+            class="rounded-lg bg-black bg-opacity-40 px-2 py-1"
           >
-            <span class="opacity-100">{{ genre.name }}</span>
+            <span class="text-sm opacity-100">{{ genre.name }}</span>
           </div>
+          <i class="fas fa-play rounded-full bg-gray-800 px-6 text-2xl"></i>
         </div>
       </div>
       <!-- Details Div -->
       <!-- TODO: Make squares blurred in the background. -->
       <div
-        class="absolute h-full top-0 right-0 mx-4 flex flex-col justify-around z-10 font-bold"
+        class="absolute right-0 top-0 z-10 mx-4 hidden h-full flex-col justify-around sm:block"
       >
-        <div
-          class="w-24 h-16 bg-yellow-400 bg-opacity-40 rounded-xl flex items-center justify-center"
-        >
+        <div class="info-square bg-yellow-400 bg-opacity-40">
           {{ Math.floor(movie.vote_average * 10) }}%
         </div>
-        <div
-          class="w-24 h-16 bg-black bg-opacity-40 rounded-xl flex items-center justify-center"
-        >
+        <div class="info-square bg-black bg-opacity-40">
           {{ movie.release_date.split('-')[0] }}
         </div>
-        <div
-          class="w-24 h-16 bg-black bg-opacity-40 rounded-xl flex items-center justify-center"
-        >
+        <div class="info-square bg-black bg-opacity-40">
           {{ Math.floor(movie.runtime / 60) }}h {{ movie.runtime % 60 }}m
         </div>
-        <div
-          class="w-24 h-16 bg-green-900 rounded-xl flex items-center justify-center"
-        >
+        <div class="info-square bg-green-900">
           <i class="fas fa-play text-3xl"></i>
         </div>
       </div>
