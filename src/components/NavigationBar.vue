@@ -16,20 +16,10 @@
           />
         </RouterLink>
       </div>
-      <div class="flex gap-2 text-sm">
-        <RouterLink to="/movies">
-          <div class="rounded-md bg-black bg-opacity-20 p-2">MOVIES</div>
-        </RouterLink>
-        <RouterLink to="/tv-shows"
-          ><div class="rounded-md bg-black bg-opacity-20 p-2">
-            SERIES
-          </div></RouterLink
-        >
-        <RouterLink to="/tv-shows"
-          ><div class="rounded-md bg-cyan-400 bg-opacity-20 p-2">
-            KIDS
-          </div></RouterLink
-        >
+      <div class="text-md flex justify-between">
+        <RouterLink to="/movies"> MOVIES </RouterLink>
+        <RouterLink to="/tv-shows">SERIES</RouterLink>
+        <RouterLink to="/tv-shows">KIDS</RouterLink>
         <RouterLink to="/profile" class="hidden sm:block">
           <img
             class="h-10 w-10 rounded-full"
