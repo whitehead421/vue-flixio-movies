@@ -1,11 +1,11 @@
 <template>
   <div class="container relative text-white" @click="goToMovieView(movie)">
-    <div class="group relative cursor-pointer overflow-hidden">
+    <div class="group relative cursor-pointer overflow-hidden rounded-xl">
       <!-- Image Div -->
       <div class="h-96 w-full">
         <img
           :src="`https://image.tmdb.org/t/p/original${movie.backdrop_path}`"
-          class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+          class="h-full w-full rounded-xl object-cover object-top transition-all duration-500 group-hover:scale-105"
         />
       </div>
       <!-- Opacity Layer Div -->
@@ -25,7 +25,7 @@
           {{ movie.overview }}
         </p>
         <!-- Tags Div -->
-        <div class="mb-2 flex gap-2">
+        <div class="mb-2 flex w-full items-center gap-2">
           <div
             v-for="genre in movie.genres"
             :key="genre.id"
@@ -33,7 +33,9 @@
           >
             <span class="text-sm opacity-100">{{ genre.name }}</span>
           </div>
-          <i class="fas fa-play rounded-full bg-gray-800 px-6 text-2xl"></i>
+          <div class="info-square ml-auto flex bg-green-900">
+            <i class="fas fa-play text-2xl"></i>
+          </div>
         </div>
       </div>
       <!-- Details Div -->
@@ -84,7 +86,6 @@ const getResults = async () => {
 const movie = await getResults()
 
 const router = useRouter()
-
 const goToMovieView = (movie) => {
   router.push({
     name: 'movieView',

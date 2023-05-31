@@ -1,6 +1,6 @@
 <template>
-  <header class="sticky top-0 z-30 bg-neutral-900 text-white">
-    <nav class="mx-4 flex flex-col gap-4 py-6 sm:flex-row sm:justify-between">
+  <header class="container sticky top-0 z-30 bg-neutral-900 text-white">
+    <nav class="flex flex-col gap-4 py-6 sm:flex-row sm:justify-between">
       <div class="flex items-center justify-between">
         <RouterLink to="/">
           <div class="flex items-center gap-2">
