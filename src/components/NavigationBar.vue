@@ -16,8 +16,10 @@
           />
         </RouterLink>
       </div>
-      <div class="text-md flex justify-between">
-        <RouterLink to="/movies"> MOVIES </RouterLink>
+      <div
+        class="text-md flex items-center justify-between md:gap-4 md:text-xl"
+      >
+        <RouterLink to="/movies">MOVIES</RouterLink>
         <RouterLink to="/tv-shows">SERIES</RouterLink>
         <RouterLink to="/tv-shows">KIDS</RouterLink>
         <RouterLink to="/profile" class="hidden sm:block">

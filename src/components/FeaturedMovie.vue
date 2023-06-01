@@ -33,7 +33,7 @@
           >
             <span class="text-sm opacity-100">{{ genre.name }}</span>
           </div>
-          <div class="info-square ml-auto flex bg-green-900">
+          <div class="info-square ml-auto flex bg-green-900 sm:hidden">
             <i class="fas fa-play text-2xl"></i>
           </div>
         </div>
@@ -41,7 +41,7 @@
       <!-- Details Div -->
       <!-- TODO: Make squares blurred in the background. -->
       <div
-        class="absolute right-0 top-0 z-10 mx-4 hidden h-full flex-col justify-around sm:block"
+        class="absolute right-0 top-0 z-10 mx-4 hidden h-full flex-col sm:flex sm:justify-around"
       >
         <div class="info-square bg-yellow-400 bg-opacity-40">
           {{ Math.floor(movie.vote_average * 10) }}%

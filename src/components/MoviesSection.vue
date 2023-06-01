@@ -1,14 +1,14 @@
 <template>
-  <div class="container text-white my-8 flex flex-col">
+  <div class="container my-8 flex flex-col text-white">
     <!-- Title Div -->
-    <div class="flex gap-2 items-center mb-10">
-      <i class="fa-solid fa-fire-flame-curved text-red-600 text-xl"></i>
-      <h2 class="text-xl uppercase font-bold">
+    <div class="mb-10 flex items-center gap-2">
+      <i class="fa-solid fa-fire-flame-curved text-red-600"></i>
+      <h2 class="font-bold uppercase">
         {{ sectionTitle }}
       </h2>
     </div>
     <!-- Movies Div Grid Template -->
-    <div class="grid grid-cols-6 grid-flow-col-dense gap-4">
+    <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
       <MovieCard v-for="movie in results" :key="movie.id" :movie="movie" />
     </div>
   </div>
