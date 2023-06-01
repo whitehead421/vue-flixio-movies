@@ -1,8 +1,8 @@
 <template>
-  <div class="text-white">
+  <div class="container text-white">
     <div class="relative flex justify-center">
       <img
-        class="h-96 w-full object-cover object-top"
+        class="h-[200px] w-full rounded-lg object-cover object-top shadow-lg md:h-[400px] lg:h-[500px]"
         :src="`https://image.tmdb.org/t/p/original${movie.backdrop_path}`"
         :alt="`${movie.title} backdrop image`"
       />

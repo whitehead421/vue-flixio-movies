@@ -1,5 +1,5 @@
 <template>
-  <div class="text-white">
+  <div class="container text-white">
     <div class="relative flex justify-center">
       <UnitSkeleton class="h-96 w-full" />
       <!-- Overlay For Transition -->
