@@ -19,7 +19,7 @@ import SiteFooter from './components/SiteFooter.vue'
 <style>
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
   /* transition: 600ms ease all; */
 }
 
