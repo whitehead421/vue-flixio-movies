@@ -28,4 +28,13 @@
   .info-square {
     @apply flex h-14 w-20 items-center justify-center rounded-xl text-sm font-bold lg:h-16 lg:w-24 lg:text-base xl:h-24 xl:w-32 xl:text-lg;
   }
+
+  .input {
+    @apply h-10 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2;
+  }
+
+  .btn {
+    @apply flex h-10 w-full items-center justify-center rounded-lg bg-purple-500 text-sm font-bold uppercase tracking-wider
+    text-white outline-none transition-all duration-300 hover:-translate-y-1 hover:bg-purple-600 focus:border-none focus:ring-2 focus:ring-purple-600  focus:ring-offset-2 active:bg-purple-700;
+  }
 }
