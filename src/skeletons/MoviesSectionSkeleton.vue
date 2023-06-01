@@ -1,13 +1,13 @@
 <template>
-  <div class="container text-white my-8 flex flex-col">
+  <div class="container my-8 flex flex-col text-white">
     <!-- Title Div -->
-    <div class="flex gap-2 items-center mb-10">
-      <UnitSkeleton class="w-8 h-8 rounded-full" />
-      <UnitSkeleton class="w-48 h-8 rounded-lg" />
+    <div class="mb-10 flex items-center gap-2">
+      <UnitSkeleton class="h-8 w-8 rounded-full" />
+      <UnitSkeleton class="h-8 w-48 rounded-lg" />
     </div>
     <!-- Movies Div Grid Template -->
-    <div class="grid grid-cols-6 grid-flow-col-dense gap-4">
-      <MovieCardSkeleton v-for="movie in 6" :key="movie" />
+    <div class="grid grid-cols-3 gap-4">
+      <MovieCardSkeleton v-for="movie in 3" :key="movie" />
     </div>
   </div>
 </template>

@@ -5,7 +5,7 @@
         <RouterLink to="/">
           <div class="flex items-center gap-2">
             <i class="fa-solid fa-film text-3xl"></i>
-            <p class="text-4xl font-bold">FLIXIO</p>
+            <p class="text-4xl font-bold xl:text-5xl">FLIXIO</p>
           </div>
         </RouterLink>
         <RouterLink to="/profile">
@@ -17,15 +17,15 @@
         </RouterLink>
       </div>
       <div
-        class="text-md flex items-center justify-between md:gap-4 md:text-xl"
+        class="text-md flex items-center justify-between sm:gap-4 sm:text-xl xl:text-2xl"
       >
         <RouterLink to="/movies">MOVIES</RouterLink>
         <RouterLink to="/tv-shows">SERIES</RouterLink>
         <RouterLink to="/tv-shows">KIDS</RouterLink>
         <RouterLink to="/profile" class="hidden sm:block">
           <img
-            class="h-10 w-10 rounded-full"
-            src="https://randomuser.me/api/portraits/men/10.jpg"
+            class="h-10 w-10 rounded-full xl:h-14 xl:w-14"
+            src="https://randomuser.me/api/portraits/women/11.jpg"
             alt="avatar"
           />
         </RouterLink>

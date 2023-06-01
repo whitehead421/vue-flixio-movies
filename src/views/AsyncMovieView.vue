@@ -2,12 +2,14 @@
   <div class="text-white">
     <div class="relative flex justify-center">
       <img
-        class="h-96 w-full object-cover"
+        class="h-96 w-full object-cover object-top"
         :src="`https://image.tmdb.org/t/p/original${movie.backdrop_path}`"
         :alt="`${movie.title} backdrop image`"
       />
       <!-- Overlay For Transition -->
-      <div class="absolute inset-0 bg-gradient-to-t from-black"></div>
+      <div
+        class="absolute inset-0 -bottom-1 bg-gradient-to-t from-black via-transparent"
+      ></div>
       <div class="container absolute bottom-4 flex flex-col text-white">
         <h1 class="text-4xl font-bold">{{ movie.title }}</h1>
         <!-- Genres -->
@@ -73,8 +75,9 @@ const getMovie = async () => {
     `https://api.themoviedb.org/3/movie/${route.params.id}/credits?api_key=${apiKey}&language=en-US`
   )
 
+  await new Promise((resolve) => setTimeout(resolve, 2000))
+
   result.data.cast = credits.data.cast.slice(0, 5)
-  console.log(result.data)
   return result.data
 }
 

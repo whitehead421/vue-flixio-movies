@@ -3,20 +3,27 @@
     <!-- Title Div -->
     <div class="mb-10 flex items-center gap-2">
       <i class="fa-solid fa-fire-flame-curved text-red-600"></i>
-      <h2 class="font-bold uppercase">
+      <h2 class="font-bold uppercase lg:text-lg xl:text-xl">
         {{ sectionTitle }}
       </h2>
     </div>
     <!-- Movies Div Grid Template -->
-    <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
-      <MovieCard v-for="movie in results" :key="movie.id" :movie="movie" />
+    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+      <RouterLink
+        v-for="movie in results"
+        :key="movie.id"
+        :to="`/movie/${movie.id}`"
+      >
+        <MovieCard :movie="movie" />
+      </RouterLink>
     </div>
   </div>
 </template>
 
 <script setup>
-import MovieCard from './MovieCard.vue'
+import { RouterLink } from 'vue-router'
 import axios from 'axios'
+import MovieCard from './MovieCard.vue'
 
 defineProps({
   sectionTitle: {
@@ -36,7 +43,7 @@ const getResults = async () => {
 
   await new Promise((resolve) => setTimeout(resolve, 2000))
 
-  return result.data.results.slice(8, 14)
+  return result.data.results.slice(2, 14)
 }
 
 results = await getResults()

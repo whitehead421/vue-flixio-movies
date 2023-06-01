@@ -1,8 +1,6 @@
 <template>
-  <div
-    class="flex-1 h-48 rounded-lg overflow-hidden hover:scale-110 transition-transform duration-500 cursor-pointer"
-  >
-    <UnitSkeleton class="w-full h-full rounded-lg" />
+  <div class="h-36 md:h-72 lg:h-96">
+    <UnitSkeleton class="h-full w-full rounded-lg" />
   </div>
 </template>
 

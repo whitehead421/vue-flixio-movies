@@ -4,25 +4,25 @@
       <div class="h-96 w-full">
         <UnitSkeleton class="h-full w-full rounded-xl" />
       </div>
-      <div class="absolute inset-0 flex gap-2 flex-col px-9 justify-end mb-4">
+      <div class="absolute inset-0 mb-4 flex flex-col justify-end gap-2 px-9">
         <h1 class="text-6xl">
-          <UnitSkeleton class="rounded-lg max-w-[30%] mb-4" />
+          <UnitSkeleton class="mb-4 max-w-[30%] rounded-lg" />
         </h1>
-        <UnitSkeleton class="rounded-lg max-w-[20%] text-lg" />
-        <UnitSkeleton class="rounded-lg max-w-[50%] mb-4 text-lg" />
+        <UnitSkeleton class="max-w-[20%] rounded-lg text-lg" />
+        <UnitSkeleton class="mb-4 max-w-[50%] rounded-lg text-lg" />
         <div class="flex max-w-full gap-2">
-          <UnitSkeleton class="rounded-lg w-[8%] text-sm py-2" />
-          <UnitSkeleton class="rounded-lg w-[6%] text-sm py-2" />
-          <UnitSkeleton class="rounded-lg w-[12%] text-sm py-2" />
+          <UnitSkeleton class="w-[8%] rounded-lg py-2 text-sm" />
+          <UnitSkeleton class="w-[6%] rounded-lg py-2 text-sm" />
+          <UnitSkeleton class="w-[12%] rounded-lg py-2 text-sm" />
         </div>
       </div>
       <div
-        class="absolute h-full top-0 right-0 mx-4 flex flex-col justify-around z-10 font-bold"
+        class="absolute right-0 top-0 z-10 mx-4 hidden h-full flex-col justify-around font-bold md:flex"
       >
-        <UnitSkeleton class="w-24 h-16 bg-black bg-opacity-40 rounded-xl" />
-        <UnitSkeleton class="w-24 h-16 bg-black bg-opacity-40 rounded-xl" />
-        <UnitSkeleton class="w-24 h-16 bg-black bg-opacity-40 rounded-xl" />
-        <UnitSkeleton class="w-24 h-16 bg-black bg-opacity-40 rounded-xl" />
+        <UnitSkeleton class="h-14 w-20 rounded-xl lg:h-16 lg:w-24" />
+        <UnitSkeleton class="h-14 w-20 rounded-xl lg:h-16 lg:w-24" />
+        <UnitSkeleton class="h-14 w-20 rounded-xl lg:h-16 lg:w-24" />
+        <UnitSkeleton class="h-14 w-20 rounded-xl lg:h-16 lg:w-24" />
       </div>
     </div>
   </div>

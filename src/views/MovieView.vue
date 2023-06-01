@@ -4,12 +4,13 @@
       <AsyncMovieView />
 
       <template #fallback>
-        <h1>Loading...</h1>
+        <MovieViewSkeleton />
       </template>
     </Suspense>
   </div>
 </template>
 
 <script setup>
-import AsyncMovieView from '../components/AsyncMovieView.vue'
+import MovieViewSkeleton from '../skeletons/MovieViewSkeleton.vue'
+import AsyncMovieView from './AsyncMovieView.vue'
 </script>

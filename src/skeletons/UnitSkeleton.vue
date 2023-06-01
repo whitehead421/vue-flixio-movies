@@ -1,3 +1,3 @@
 <template>
-  <div class="bg-neutral-800 animate-pulse">&nbsp;</div>
+  <div class="animate-pulse bg-neutral-800">&nbsp;</div>
 </template>

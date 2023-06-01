@@ -2,7 +2,7 @@
   <div class="container relative text-white" @click="goToMovieView(movie)">
     <div class="group relative cursor-pointer overflow-hidden rounded-xl">
       <!-- Image Div -->
-      <div class="h-96 w-full">
+      <div class="h-96 w-full xl:h-[600px]">
         <img
           :src="`https://image.tmdb.org/t/p/original${movie.backdrop_path}`"
           class="h-full w-full rounded-xl object-cover object-top transition-all duration-500 group-hover:scale-105"
@@ -14,13 +14,13 @@
       ></div>
       <!-- Title and Description Div -->
       <div
-        class="absolute inset-0 mb-4 flex flex-col justify-end gap-2 px-9 transition-all duration-500"
+        class="absolute inset-0 mb-4 flex flex-col justify-end gap-2 px-9 transition-all duration-500 lg:gap-4 xl:gap-6"
       >
-        <h1 class="font-dmserif text-2xl font-bold uppercase">
+        <h1 class="font-bold uppercase md:text-3xl lg:text-4xl xl:text-6xl">
           {{ movie.title }}
         </h1>
         <p
-          class="mb-2 line-clamp-3 w-1/2 text-sm transition-opacity duration-300"
+          class="mb-2 line-clamp-2 w-1/2 text-sm transition-opacity duration-300 md:line-clamp-3 md:text-base lg:line-clamp-4 lg:text-base xl:text-xl"
         >
           {{ movie.overview }}
         </p>
@@ -29,9 +29,11 @@
           <div
             v-for="genre in movie.genres"
             :key="genre.id"
-            class="rounded-lg bg-black bg-opacity-40 px-2 py-1"
+            class="rounded-lg bg-black bg-opacity-40 px-2 py-1 md:px-3 lg:px-4 lg:py-2 xl:px-6 xl:py-4"
           >
-            <span class="text-sm opacity-100">{{ genre.name }}</span>
+            <span class="text-sm opacity-100 md:text-base xl:text-xl">{{
+              genre.name
+            }}</span>
           </div>
           <div class="info-square ml-auto flex bg-green-900 sm:hidden">
             <i class="fas fa-play text-2xl"></i>
