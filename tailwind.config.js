@@ -2,7 +2,12 @@
 module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#171717',
+        secondary: '#9333ea',
+      },
+    },
     container: {
       padding: '2.25rem',
       center: true,

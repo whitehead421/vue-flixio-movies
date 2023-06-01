@@ -22,13 +22,41 @@
         <RouterLink to="/movies">MOVIES</RouterLink>
         <RouterLink to="/tv-shows">SERIES</RouterLink>
         <RouterLink to="/tv-shows">KIDS</RouterLink>
-        <RouterLink to="/profile" class="hidden sm:block">
+        <div class="relative h-10 w-10 xl:h-14 xl:w-14">
           <img
-            class="h-10 w-10 rounded-full xl:h-14 xl:w-14"
+            class="cursor-pointer rounded-full object-cover"
             src="https://randomuser.me/api/portraits/women/11.jpg"
-            alt="avatar"
+            alt="user avatar"
+            @click="toggleVisibility"
           />
-        </RouterLink>
+          <div
+            class="absolute right-2 top-14 flex cursor-pointer flex-col justify-center gap-2 overflow-hidden rounded-lg bg-primary text-xs uppercase text-white shadow-md shadow-black"
+            v-if="isVisible"
+            @click="toggleVisibility"
+          >
+            <RouterLink to="/profile">
+              <div
+                class="ease flex items-center gap-2 p-4 transition-all duration-300 hover:bg-black"
+              >
+                <i class="fa-solid fa-user"></i>
+                <p class="">Profile</p>
+              </div>
+            </RouterLink>
+            <div
+              class="ease flex items-center gap-2 p-4 transition-all duration-300 hover:bg-black"
+            >
+              <i class="fa-solid fa-bell"></i>
+              <p class="">Notifications</p>
+            </div>
+            <hr class="border-gray-300 opacity-30" />
+            <div
+              class="ease flex items-center gap-2 p-4 transition-all duration-300 hover:bg-black"
+            >
+              <i class="fa-solid fa-sign-out"></i>
+              <p class="">Sign Out</p>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
   </header>
@@ -36,4 +64,10 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
+import { ref } from 'vue'
+const isVisible = ref(false)
+
+const toggleVisibility = () => {
+  isVisible.value = !isVisible.value
+}
 </script>
