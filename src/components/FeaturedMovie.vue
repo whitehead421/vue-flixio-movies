@@ -35,7 +35,9 @@
               genre.name
             }}</span>
           </div>
-          <div class="info-square ml-auto flex bg-green-900 sm:hidden">
+          <div
+            class="info-square ml-auto flex bg-black bg-opacity-40 text-secondary sm:hidden"
+          >
             <i class="fas fa-play text-2xl"></i>
           </div>
         </div>
@@ -45,7 +47,7 @@
       <div
         class="absolute right-0 top-0 z-10 mx-4 hidden h-full flex-col sm:flex sm:justify-around"
       >
-        <div class="info-square bg-yellow-400 bg-opacity-40">
+        <div class="info-square bg-secondary">
           {{ Math.floor(movie.vote_average * 10) }}%
         </div>
         <div class="info-square bg-black bg-opacity-40">
@@ -54,7 +56,7 @@
         <div class="info-square bg-black bg-opacity-40">
           {{ Math.floor(movie.runtime / 60) }}h {{ movie.runtime % 60 }}m
         </div>
-        <div class="info-square bg-green-900">
+        <div class="info-square bg-black bg-opacity-40 text-secondary">
           <i class="fas fa-play text-3xl"></i>
         </div>
       </div>
@@ -80,7 +82,7 @@ const getResults = async () => {
     `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`
   )
 
-  const movie = await getDetails(result.data.results[0])
+  const movie = await getDetails(result.data.results[1])
   await new Promise((resolve) => setTimeout(resolve, 2000))
   return movie
 }

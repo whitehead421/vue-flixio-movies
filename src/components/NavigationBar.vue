@@ -12,7 +12,7 @@
         </RouterLink>
         <img
           class="h-10 w-10 rounded-full sm:hidden"
-          src="https://randomuser.me/api/portraits/women/11.jpg"
+          :src="`${user.photoURL}`"
           alt="avatar"
           @click="toggleVisibility"
         />
@@ -22,39 +22,47 @@
       >
         <RouterLink to="/movies">MOVIES</RouterLink>
         <RouterLink to="/tv-shows">SERIES</RouterLink>
-        <RouterLink to="/tv-shows">KIDS</RouterLink>
+        <RouterLink to="/kids">KIDS</RouterLink>
+        <RouterLink class="ml-auto" to="/login">
+          <div
+            v-if="!isLoggedIn"
+            class="rounded-lg bg-secondary px-2 py-1 text-xs text-white ring-secondary transition duration-500 hover:bg-opacity-60 active:ring-2 lg:text-lg xl:px-4 xl:py-2 xl:text-lg"
+          >
+            LOGIN
+          </div>
+        </RouterLink>
         <div
           class="relative ml-auto hidden h-10 w-10 sm:block xl:h-14 xl:w-14"
           v-if="isLoggedIn"
         >
           <img
             class="cursor-pointer rounded-full object-cover"
-            src="https://randomuser.me/api/portraits/women/11.jpg"
+            :src="`${user.photoURL}`"
             alt="user avatar"
             @click="toggleVisibility"
           />
           <div
-            class="absolute right-2 top-14 flex cursor-pointer flex-col justify-center gap-2 overflow-hidden rounded-lg bg-primary text-xs uppercase text-white shadow-md shadow-black"
+            class="absolute right-2 top-14 flex cursor-pointer flex-col justify-center overflow-hidden rounded-lg bg-primary text-xs uppercase text-white shadow-md shadow-black"
             v-if="isVisible"
             @click="toggleVisibility"
           >
             <RouterLink to="/profile">
               <div
-                class="ease flex items-center gap-2 p-4 transition-all duration-300 hover:bg-black"
+                class="ease flex items-center gap-2 p-4 font-medium transition-all duration-300 hover:bg-black"
               >
                 <i class="fa-solid fa-user"></i>
                 <p class="">Profile</p>
               </div>
             </RouterLink>
             <div
-              class="ease flex items-center gap-2 p-4 transition-all duration-300 hover:bg-black"
+              class="ease flex items-center gap-2 p-4 font-medium transition-all duration-300 hover:bg-black"
             >
               <i class="fa-solid fa-bell"></i>
               <p class="">Notifications</p>
             </div>
             <hr class="border-gray-300 opacity-30" />
             <div
-              class="ease flex items-center gap-2 p-4 transition-all duration-300 hover:bg-black"
+              class="ease flex items-center gap-2 p-4 font-medium transition-all duration-300 hover:bg-black"
               @click="handleSignOut"
             >
               <i class="fa-solid fa-sign-out"></i>
@@ -75,13 +83,15 @@ import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
 const isVisible = ref(false)
 const isLoggedIn = ref(false)
 const router = useRouter()
-
+const user = ref({})
 let auth
 onMounted(() => {
   auth = getAuth()
   onAuthStateChanged(auth, (user) => {
     if (user) {
       isLoggedIn.value = true
+      user.value = user
+      console.log(user)
     } else {
       isLoggedIn.value = false
     }

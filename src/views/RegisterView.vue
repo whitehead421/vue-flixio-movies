@@ -13,7 +13,7 @@
       <button @click="register" class="btn btn-primary">Register</button>
       <button @click="signInWithGoogle" class="btn btn-google flex gap-2">
         <i class="fab fa-google"></i>
-        <span>Register with Google</span>
+        <span>Sign in with Google</span>
       </button>
     </form>
   </div>
@@ -21,7 +21,12 @@
 
 <script setup>
 import { ref } from 'vue'
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from 'firebase/auth'
 import { useRouter } from 'vue-router'
 
 const email = ref('')
@@ -42,7 +47,17 @@ const register = (e) => {
     })
 }
 
-const signInWithGoogle = (e) => {}
+const signInWithGoogle = (e) => {
+  e.preventDefault()
+  const provider = new GoogleAuthProvider()
+  signInWithPopup(getAuth(), provider)
+    .then((result) => {
+      console.log(result.user)
+      router.push({ name: 'home' })
+    })
+    .catch((error) => {
+      console.log(error.code)
+      console.log(error.message)
+    })
+}
 </script>
-
-<style lang="scss" scoped></style>
