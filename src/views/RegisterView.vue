@@ -1,7 +1,9 @@
 <template>
-  <div class="container text-center text-white">
-    <h1 class="mb-4 text-3xl">REGISTER</h1>
-    <form class="flex flex-col gap-4">
+  <div
+    class="container flex flex-1 flex-col items-center justify-center text-center text-white"
+  >
+    <h1 class="mb-4 text-3xl">FLIXIO</h1>
+    <form class="flex w-1/3 flex-col gap-4">
       <input type="email" placeholder="Email" class="input" v-model="email" />
       <input
         type="password"
@@ -16,6 +18,10 @@
         <span>Sign in with Google</span>
       </button>
     </form>
+    <p class="my-4">
+      Already have an account?
+      <RouterLink class="text-secondary" to="/login"> Sign in. </RouterLink>
+    </p>
   </div>
 </template>
 
@@ -26,6 +32,7 @@ import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
+  updateProfile,
 } from 'firebase/auth'
 import { useRouter } from 'vue-router'
 
@@ -36,10 +43,11 @@ const router = useRouter()
 const register = (e) => {
   e.preventDefault()
   createUserWithEmailAndPassword(getAuth(), email.value, password.value)
-    .then((userCredential) => {
-      console.log('Successfully registered!')
-      // go home with name
+    .then(async (result) => {
       router.push({ name: 'home' })
+      await updateProfile(result.user, {
+        photoURL: 'https://i.hizliresim.com/pkdv54p.png',
+      })
     })
     .catch((error) => {
       console.log('Error registering!', error.code)
@@ -52,7 +60,9 @@ const signInWithGoogle = (e) => {
   const provider = new GoogleAuthProvider()
   signInWithPopup(getAuth(), provider)
     .then((result) => {
-      console.log(result.user)
+      // make user logined in
+      console.log('Successfully signed!')
+
       router.push({ name: 'home' })
     })
     .catch((error) => {

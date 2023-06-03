@@ -37,4 +37,9 @@
     @apply flex h-10 w-full items-center justify-center rounded-lg bg-purple-500 text-sm font-bold uppercase tracking-wider
     text-white outline-none transition-all duration-300 hover:-translate-y-1 hover:bg-purple-600 focus:border-none focus:ring-2 focus:ring-purple-600  focus:ring-offset-2 active:bg-purple-700;
   }
+
+  .btn-google {
+    @apply flex h-10 w-full items-center justify-center rounded-lg bg-red-500 text-sm font-bold uppercase tracking-wider
+    text-white outline-none transition-all duration-300 hover:-translate-y-1 hover:bg-red-600 focus:border-none focus:ring-2 focus:ring-red-600  focus:ring-offset-2 active:bg-red-700;
+  }
 }
