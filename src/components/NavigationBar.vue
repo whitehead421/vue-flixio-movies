@@ -1,5 +1,5 @@
 <template>
-  <header class="container sticky top-0 z-30 bg-neutral-900 text-white">
+  <header class="container sticky top-0 z-30 mb-2 bg-neutral-900 text-white">
     <nav class="flex flex-col gap-4 py-6 sm:flex-row">
       <div class="flex items-center justify-between">
         <RouterLink to="/">
