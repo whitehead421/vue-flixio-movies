@@ -24,8 +24,8 @@
 
       <!-- User Related Content and Statistics -->
       <hr class="my-2 border-secondary opacity-30 sm:hidden" />
-      <div class="flex flex-col">
-        <h2 class="py-2 text-left font-bold">Top-Rated Genres</h2>
+      <div v-for="genre in genres" :key="genre.id" class="flex flex-col">
+        <RatingBarVue :genre="genre" />
       </div>
     </div>
   </div>
@@ -34,8 +34,19 @@
 <script setup>
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { ref, onMounted } from 'vue'
+import RatingBarVue from '../components/RatingBar.vue'
 
 const user = ref(null)
+
+const genres = [
+  { name: 'Action', rating: 7.5, count: 100, id: 1 },
+  { name: 'Comedy', rating: 8.2, count: 85, id: 2 },
+  { name: 'Drama', rating: 9.1, count: 120, id: 3 },
+  { name: 'Thriller', rating: 7.8, count: 95, id: 4 },
+  { name: 'Romance', rating: 8.5, count: 70, id: 5 },
+  { name: 'Science Fiction', rating: 8, count: 110, id: 6 },
+  { name: 'Horror', rating: 7.3, count: 75, id: 7 },
+]
 
 onMounted(() => {
   const auth = getAuth()
