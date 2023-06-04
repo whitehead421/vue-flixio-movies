@@ -3,7 +3,10 @@
     <span class="text-left text-sm">{{ genre.name }}</span>
 
     <div class="h-2 flex-1 rounded-lg bg-gray-800">
-      <div :class="`h-full w-[10%] rounded-lg bg-secondary`"></div>
+      <div
+        class="h-full rounded-lg bg-secondary"
+        :class="`w-[${Math.floor(genre.rating * 10)}%]`"
+      ></div>
     </div>
     <div class="ml-2 flex flex-row items-center gap-1 text-sm text-gray-600">
       <i class="fa-regular fa-star"></i>

@@ -20,18 +20,36 @@
             {{ user?.email }}
           </span>
         </div>
+        <!-- profile edit button -->
+        <button
+          class="absolute bottom-0 right-0 flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-sm text-white"
+        >
+          <i class="fas fa-pen"></i>
+        </button>
       </div>
 
       <!-- User Related Content and Statistics -->
       <hr class="my-2 border-secondary opacity-30 sm:hidden" />
+      <!-- Top-Rated Genres Section -->
+      <h2
+        class="my-4 max-w-fit border-b-2 border-secondary text-left font-bold"
+      >
+        Top-Rated Genres
+      </h2>
       <div v-for="genre in genres" :key="genre.id" class="flex flex-col">
         <RatingBarVue :genre="genre" />
       </div>
+      <Suspense>
+        <UserWatchlist />
+
+        <template #fallback> loading </template>
+      </Suspense>
     </div>
   </div>
 </template>
 
 <script setup>
+import UserWatchlist from '../components/UserWatchlist.vue'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { ref, onMounted } from 'vue'
 import RatingBarVue from '../components/RatingBar.vue'
@@ -51,8 +69,11 @@ const genres = [
 onMounted(() => {
   const auth = getAuth()
   onAuthStateChanged(auth, (userAuth) => {
-    user.value = userAuth
-    console.log(user.value)
+    if (userAuth) {
+      user.value = userAuth
+    } else {
+      user.value = null
+    }
   })
 })
 </script>
