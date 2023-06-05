@@ -42,7 +42,9 @@
         </div>
         <Suspense>
           <UserWatchlist />
-          <template #fallback> loading </template>
+          <template #fallback>
+            <UserWatchListSkeleton />
+          </template>
         </Suspense>
       </div>
     </div>
@@ -51,6 +53,7 @@
 
 <script setup>
 import UserWatchlist from '../components/UserWatchlist.vue'
+import UserWatchListSkeleton from '../skeletons/UserWatchlistSkeleton.vue'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { ref, onMounted } from 'vue'
 import RatingBarVue from '../components/RatingBar.vue'
