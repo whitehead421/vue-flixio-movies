@@ -7,7 +7,7 @@
       {{ movies.length }}
     </span>
   </div>
-  <div class="grid grid-cols-2">
+  <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
     <div v-for="(item, index) in movies" class="group relative m-2 p-2">
       <img
         :src="`https://image.tmdb.org/t/p/original${item.poster_path}`"

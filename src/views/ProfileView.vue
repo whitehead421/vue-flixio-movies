@@ -1,19 +1,19 @@
 <template>
   <div class="container text-center text-white">
-    <div class="mt-4 sm:grid sm:grid-cols-4">
+    <div class="mt-4 lg:grid lg:grid-cols-4 lg:gap-4">
       <!-- Profile Information -->
 
-      <div class="relative flex flex-col items-center">
+      <div class="relative flex flex-col items-center sm:h-40 lg:h-56">
         <!-- image on back -->
         <img
           :src="user?.photoURL"
-          class="h-24 w-24 rounded-full object-cover sm:h-full sm:w-full sm:rounded-none"
+          class="h-24 w-24 rounded-full object-cover lg:h-full lg:w-full lg:rounded-none"
         />
         <div
-          class="absolute inset-0 hidden bg-gradient-to-t from-black from-5% via-transparent sm:block"
+          class="absolute inset-0 hidden bg-gradient-to-t from-black from-5% via-transparent lg:block"
         ></div>
         <div
-          class="inset-0 my-2 flex h-full flex-col p-2 sm:absolute sm:items-start sm:justify-end"
+          class="inset-0 my-2 flex h-full flex-col p-2 lg:absolute lg:items-start lg:justify-end"
         >
           <span class="text-lg">{{ user?.email.split('@')[0] }}</span>
           <span class="text-sm text-neutral-500">
@@ -31,19 +31,20 @@
       <!-- User Related Content and Statistics -->
       <hr class="my-2 border-secondary opacity-30 sm:hidden" />
       <!-- Top-Rated Genres Section -->
-      <h2
-        class="my-4 max-w-fit border-b-2 border-secondary text-left font-bold"
-      >
-        Top-Rated Genres
-      </h2>
-      <div v-for="genre in genres" :key="genre.id" class="flex flex-col">
-        <RatingBarVue :genre="genre" />
+      <div class="col-span-3">
+        <h2
+          class="my-4 max-w-fit border-b-2 border-secondary text-left font-bold sm:m-0"
+        >
+          Top-Rated Genres
+        </h2>
+        <div v-for="genre in genres" :key="genre.id" class="flex flex-col">
+          <RatingBarVue :genre="genre" />
+        </div>
+        <Suspense>
+          <UserWatchlist />
+          <template #fallback> loading </template>
+        </Suspense>
       </div>
-      <Suspense>
-        <UserWatchlist />
-
-        <template #fallback> loading </template>
-      </Suspense>
     </div>
   </div>
 </template>

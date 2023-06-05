@@ -11,6 +11,7 @@
           </div>
         </RouterLink>
         <img
+          v-if="isLoggedIn"
           class="h-10 w-10 rounded-full sm:hidden"
           :src="auth.currentUser?.photoURL"
           alt="avatar"
